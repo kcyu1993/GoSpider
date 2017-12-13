@@ -16,12 +16,12 @@ func Second(times int) time.Duration {
 
 // get secord times
 // 172606056
-func GetSecordTimes() int64 {
+func GetSecondTimes() int64 {
 	return time.Now().Unix()
 }
 
 //201611112113
-func GetSecord2DateTimes(secord int64) string {
+func GetSecond2DateTimes(secord int64) string {
 	tm := time.Unix(secord, 0)
 	return tm.Format("20060102150405")
 

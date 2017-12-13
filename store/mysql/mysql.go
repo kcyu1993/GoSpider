@@ -113,13 +113,14 @@ func (dbconfig MysqlConfig) DeleteDb() error {
 	return err
 }
 
-//打开数据库连接 open a connecttion
+//打开数据库连接 open a connection
 //username:password@protocol(address)/dbname?param=value
 func (db *Mysql) Open(maxopen int, maxidle int) {
 	if db.Client != nil {
 		return
 	}
-	dbs, err := sql.Open("mysql", db.Config.Username+":"+db.Config.Password+"@tcp("+db.Config.Ip+":"+db.Config.Port+")/"+db.Config.Dbname+"?charset=utf8")
+	dbs, err := sql.Open("mysql", db.Config.Username+":"+
+		db.Config.Password+"@tcp("+db.Config.Ip+":"+db.Config.Port+")/"+db.Config.Dbname+"?charset=utf8")
 	if err != nil {
 		log.Logger.Fatalf("Open database error: %s", err.Error())
 	}

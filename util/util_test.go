@@ -95,11 +95,11 @@ func TestTodayString(t *testing.T) {
 	t.Log(TodayString(3))
 
 	// now secord times from January 1, 1970 UTC.
-	secord := GetSecordTimes()
+	secord := GetSecondTimes()
 	t.Log(secord)
 
 	// now date string by secord
-	timestring := GetSecord2DateTimes(secord)
+	timestring := GetSecond2DateTimes(secord)
 	t.Log(timestring)
 
 	// change back
